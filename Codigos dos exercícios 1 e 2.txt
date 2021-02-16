@@ -1,0 +1,41 @@
+//1-Adicione um botão ao jogo que permite reiniciá-lo, apagando todas as jogadas.
+    public void reiniciar() {
+    JFrame JogoDaVelha = new JogoDaVelhaFrame();
+    JogoDaVelha.setTitle("Phantom TicTacToe Game!");
+    JogoDaVelha.setSize(600, 600);
+    JogoDaVelha.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    JogoDaVelha.setLocationRelativeTo(null);
+    JogoDaVelha.setVisible(true);
+} 
+
+ 
+ //Adicione  um botão ao jogo que, quando clicado,  faz uma jogada com o jogador da vez,escolhendo uma casa aleatória que esteja vazia.
+ 
+    public class CasaAleatoriaArray {
+        int size;
+        int[] array;
+
+    
+    public CasaAleatoriaArray(int size) {
+        this.size = size;
+        array = new int[size];
+        for (int i = 0; i<size; i++) {
+            array[i] = i+1;
+        }
+    }
+
+    
+    public int remove() {
+        int ans = -1;
+        if (size > 0) {
+            
+            int randomNum = (int)(Math.random()*size);
+            ans = array[randomNum];
+ 
+            array[randomNum] = array[size-1];
+            size--;
+        }
+        return ans;
+    }
+    }
+}
